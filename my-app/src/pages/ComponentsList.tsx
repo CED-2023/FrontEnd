@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { VSpacer } from "../components/atomos/Spacer";
 import { Buttonset } from "../components/atomos/Button";
+import { TransportationButton } from "../components/atomos/TranspotationButton";
 
 export const ComponentsList = () => {
   return (
@@ -16,7 +17,7 @@ export const ComponentsList = () => {
         <VSpacer size={4} />
         <Container maxW="container.lg">
           <Heading size="lg" textAlign="center">
-            Components Mock Storybook
+            Components
           </Heading>
 
           <VSpacer size={8} />
@@ -24,6 +25,20 @@ export const ComponentsList = () => {
           <Card variant="filled">
             <CardBody>
               <Buttonset />
+            </CardBody>
+          </Card>
+
+          <VSpacer size={8} />
+          <Heading size="lg">atomos/transportation</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <TransportationButton
+                transportation={2}
+                active={false}
+                onClick={function (): void {
+                  throw new Error("Function not implemented.");
+                }}
+              />
             </CardBody>
           </Card>
 
