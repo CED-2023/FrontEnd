@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { VSpacer } from "../components/atomos/Spacer";
 import { Buttonset } from "../components/atomos/Button";
+import { WayTime } from "../components/atomos/WayTime";
 
 export const ComponentsList = () => {
   return (
@@ -24,6 +25,14 @@ export const ComponentsList = () => {
           <Card variant="filled">
             <CardBody>
               <Buttonset />
+            </CardBody>
+          </Card>
+
+          <VSpacer size={8} />
+          <Heading size="lg">atomos/WayTime</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <WayTime />
             </CardBody>
           </Card>
 
