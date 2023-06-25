@@ -1,20 +1,26 @@
-import { Stack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
+import { useState } from "react";
+import { ButtonIconList } from "../../Data/DataURLList";
 import { TransportationButton } from "../atomos/TranspotationButton";
 
-export const TranspotationButtonList = () => {
-  return (
-    <>
-      <Stack spacing={3}>
-        {}
+export const TransportationButtonList = () => {
+  const [selectedButton, setSelectedButton] = useState("");
 
-        {/* <TransportationButton
-        transportation={0}
-        active={false}
-        onClick={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-      /> */}
-      </Stack>
-    </>
+  const handleButtonClick = (label: string) => {
+    setSelectedButton(label);
+    console.log(`Clicked: ${label}`);
+  };
+
+  return (
+    <HStack spacing="38px">
+      {ButtonIconList.map((button, index) => (
+        <TransportationButton
+          key={index}
+          transportation={index}
+          active={button.label === selectedButton}
+          onClick={() => handleButtonClick(button.label)}
+        />
+      ))}
+    </HStack>
   );
 };

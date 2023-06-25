@@ -1,11 +1,14 @@
-export const ButtonIconList: string[][] = [
-  [
-    "/my-app/src/Data/PNGfile/walkOFF.png",
-    "/my-app/src/Data/PNGfile/walkON.png",
-  ],
-  [
-    `/my-app/src/Data/PNGfile/bikeOFF.png`,
-    "/my-app/src/Data/PNGfile/bikeON.png",
-  ],
-  ["/my-app/src/Data/PNGfile/carOFF.png", "/my-app/src/Data/PNGfile/carON.png"],
+export const ButtonIconList: { label: string; images: string[] }[] = [
+  {
+    label: "walk",
+    images: ["/Data/PNGfile/walkOFF.png", "/Data/PNGfile/walkON.png"],
+  },
+  {
+    label: "bike",
+    images: ["/Data/PNGfile/bikeOFF.png", "/Data/PNGfile/bikeON.png"],
+  },
+  {
+    label: "car",
+    images: ["/Data/PNGfile/carOFF.png", "/Data/PNGfile/carON.png"],
+  },
 ];
