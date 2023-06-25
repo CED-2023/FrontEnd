@@ -9,6 +9,7 @@ import {
 import { VSpacer } from "../components/atomos/Spacer";
 import { Buttonset } from "../components/atomos/Button";
 import { TransportationButtonList } from "../components/molecules/TranspotationButtonList";
+import { WayTime } from "../components/atomos/WayTime";
 
 export const ComponentsList = () => {
   return (
@@ -30,9 +31,17 @@ export const ComponentsList = () => {
 
           <VSpacer size={8} />
           <Heading size="lg">atomos/transportation</Heading>
-          <Card variant="filled" width="100%">
+          <Card variant="filled">
             <CardBody>
               <TransportationButtonList />
+            </CardBody>
+          </Card>
+
+          <VSpacer size={8} />
+          <Heading size="lg">atomos/WayTime</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <WayTime />
             </CardBody>
           </Card>
 
