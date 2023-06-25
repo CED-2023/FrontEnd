@@ -11,7 +11,7 @@
 ```tsx
 // src/components/Component.ts
 export const Component = () => {
-  // 処理
+  return <>// 処理</>;
 };
 export default Component;
 
