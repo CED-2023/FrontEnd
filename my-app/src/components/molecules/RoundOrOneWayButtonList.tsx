@@ -2,12 +2,17 @@ import { Center, HStack } from "@chakra-ui/react";
 import { RoundOrOneWayButton } from "../atomos/RoundOrOneWayButton";
 import { useState } from "react";
 
-export const RoundOrOneWayButtonSet = () => {
+type Props = {
+  onLabelChange: any;
+};
+
+export const RoundOrOneWayButtonList = ({ onLabelChange }: Props) => {
   const [selectedButton, setSelectedButton] = useState(""); //  初期値を空文字列に変更
 
   const handleButtonClick = (label: string) => {
     setSelectedButton(label);
     console.log(`Clicked: ${label}`); // コンソールに押されたボタンのラベルを表示
+    onLabelChange(label);
   };
 
   return (
