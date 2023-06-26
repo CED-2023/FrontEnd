@@ -10,6 +10,7 @@ import { VSpacer } from "../components/atomos/Spacer";
 import { Buttonset } from "../components/molecules/Button";
 import { WayTime } from "../components/atomos/WayTime";
 import { RoundOrOneWayButtonSet } from "../components/organisms/RoundOrOneWayButtonSet";
+import { PlaceInput } from "../components/atomos/PlaceInput";
 
 export const ComponentsList = () => {
   return (
@@ -42,6 +43,14 @@ export const ComponentsList = () => {
           <Card variant="filled">
             <CardBody>
               <RoundOrOneWayButtonSet />
+            </CardBody>
+          </Card>
+
+          <VSpacer size={8} />
+          <Heading size="lg">atomos/PlaceInput</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <PlaceInput />
             </CardBody>
           </Card>
 
