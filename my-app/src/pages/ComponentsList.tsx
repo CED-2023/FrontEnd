@@ -12,6 +12,7 @@ import { TransportationButtonList } from "../components/molecules/TranspotationB
 import { WayTime } from "../components/atomos/WayTime";
 import { RoundOrOneWayButtonSet } from "../components/organisms/RoundOrOneWayButtonSet";
 import { PlaceInput } from "../components/atomos/PlaceInput";
+import { SearchButton } from "../components/atomos/SearchButton";
 
 export const ComponentsList = () => {
   return (
@@ -60,6 +61,15 @@ export const ComponentsList = () => {
           <Card variant="filled">
             <CardBody>
               <PlaceInput />
+            </CardBody>
+          </Card>
+
+          <VSpacer size={8} />
+          <Heading size="lg">atomos/SearchButton</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <SearchButton active={false} />
+              <SearchButton active={true} />
             </CardBody>
           </Card>
 
