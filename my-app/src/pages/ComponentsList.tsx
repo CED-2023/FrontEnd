@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { VSpacer } from "../components/atomos/Spacer";
 import { Buttonset } from "../components/molecules/Button";
+import { TransportationButtonList } from "../components/molecules/TranspotationButtonList";
 import { WayTime } from "../components/atomos/WayTime";
 import { RoundOrOneWayButtonSet } from "../components/organisms/RoundOrOneWayButtonSet";
 import { PlaceInput } from "../components/atomos/PlaceInput";
@@ -19,7 +20,7 @@ export const ComponentsList = () => {
         <VSpacer size={4} />
         <Container maxW="container.lg">
           <Heading size="lg" textAlign="center">
-            Components Mock Storybook
+            Components
           </Heading>
 
           <VSpacer size={8} />
@@ -27,6 +28,14 @@ export const ComponentsList = () => {
           <Card variant="filled">
             <CardBody>
               <Buttonset />
+            </CardBody>
+          </Card>
+
+          <VSpacer size={8} />
+          <Heading size="lg">atomos/transportation</Heading>
+          <Card variant="filled">
+            <CardBody>
+              <TransportationButtonList />
             </CardBody>
           </Card>
 
