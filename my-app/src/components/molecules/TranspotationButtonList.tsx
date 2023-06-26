@@ -12,7 +12,7 @@ export const TransportationButtonList = () => {
   };
 
   return (
-    <HStack spacing="38px">
+    <HStack spacing="15px">
       {ButtonIconList.map((button, index) => (
         <TransportationButton
           key={index}
