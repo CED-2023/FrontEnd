@@ -20,6 +20,7 @@ export const TransportationButton = ({
     <Button
       colorScheme="orange"
       variant="outline"
+      bgColor="white"
       height="83px"
       width="101px"
       boxShadow={active ? "md" : "inner"}

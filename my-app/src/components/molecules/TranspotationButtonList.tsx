@@ -3,12 +3,18 @@ import { useState } from "react";
 import { ButtonIconList } from "../../Data/DataURLList";
 import { TransportationButton } from "../atomos/TranspotationButton";
 
-export const TransportationButtonList = () => {
+type Props = {
+  onLabelChange: any;
+  value: string | undefined;
+};
+
+export const TransportationButtonList = ({ onLabelChange }: Props) => {
   const [selectedButton, setSelectedButton] = useState("");
 
   const handleButtonClick = (label: string) => {
     setSelectedButton(label);
     console.log(`Clicked: ${label}`);
+    onLabelChange(label); // 親コンポーネントにlabelの値を渡す
   };
 
   return (
