@@ -5,6 +5,7 @@ import { TransportationButton } from "../atomos/TranspotationButton";
 
 type Props = {
   onLabelChange: any;
+  value: string | undefined;
 };
 
 export const TransportationButtonList = ({ onLabelChange }: Props) => {

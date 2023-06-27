@@ -10,7 +10,7 @@ type Props = {
 export const PlaceInput = ({ value, setState }: Props) => {
   return (
     <>
-      <Box width="222px" height="40px" color="orange">
+      <Box width="222px" height="40px" bg="white">
         <InputGroup size="sm">
           <Input
             placeholder="mysite"

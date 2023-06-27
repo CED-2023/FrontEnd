@@ -9,7 +9,7 @@ type Props = {
 export const WayTime = ({ value, setState }: Props) => {
   return (
     <>
-      <Box width="222px" height="40px" color="orange">
+      <Box width="222px" height="40px" bg="white" borderColor="orange">
         <InputGroup size="sm">
           <Input
             placeholder="60"

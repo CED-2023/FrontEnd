@@ -10,9 +10,10 @@ import { VSpacer } from "../components/atomos/Spacer";
 import { Buttonset } from "../components/molecules/Button";
 import { TransportationButtonList } from "../components/molecules/TranspotationButtonList";
 import { WayTime } from "../components/atomos/WayTime";
-import { RoundOrOneWayButtonSet } from "../components/organisms/RoundOrOneWayButtonSet";
+import { RoundOrOneWayButtonList } from "../components/molecules/RoundOrOneWayButtonList";
 import { PlaceInput } from "../components/atomos/PlaceInput";
 import { SearchButton } from "../components/atomos/SearchButton";
+import { SetStateAction } from "react";
 
 export const ComponentsList = () => {
   return (
@@ -36,7 +37,10 @@ export const ComponentsList = () => {
           <Heading size="lg">atomos/transportation</Heading>
           <Card variant="filled">
             <CardBody>
-              <TransportationButtonList />
+              <TransportationButtonList
+                onLabelChange={undefined}
+                value={undefined}
+              />
             </CardBody>
           </Card>
 
@@ -44,7 +48,14 @@ export const ComponentsList = () => {
           <Heading size="lg">atomos/WayTime</Heading>
           <Card variant="filled">
             <CardBody>
-              <WayTime />
+              <WayTime
+                value={undefined}
+                setState={function (
+                  value: SetStateAction<string | undefined>
+                ): void {
+                  throw new Error("Function not implemented.");
+                }}
+              />
             </CardBody>
           </Card>
 
@@ -52,7 +63,7 @@ export const ComponentsList = () => {
           <Heading size="lg">atomos/RoundOrOneWayButton</Heading>
           <Card variant="filled">
             <CardBody>
-              <RoundOrOneWayButtonSet />
+              <RoundOrOneWayButtonList onLabelChange={undefined} />
             </CardBody>
           </Card>
 
@@ -60,7 +71,14 @@ export const ComponentsList = () => {
           <Heading size="lg">atomos/PlaceInput</Heading>
           <Card variant="filled">
             <CardBody>
-              <PlaceInput />
+              <PlaceInput
+                value={undefined}
+                setState={function (
+                  value: SetStateAction<string | undefined>
+                ): void {
+                  throw new Error("Function not implemented.");
+                }}
+              />
             </CardBody>
           </Card>
 
@@ -68,8 +86,8 @@ export const ComponentsList = () => {
           <Heading size="lg">atomos/SearchButton</Heading>
           <Card variant="filled">
             <CardBody>
-              <SearchButton active={false} />
-              <SearchButton active={true} />
+              <SearchButton active={false} onClick={undefined} />
+              <SearchButton active={true} onClick={undefined} />
             </CardBody>
           </Card>
 

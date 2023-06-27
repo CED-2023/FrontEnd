@@ -1,9 +1,10 @@
-import { Box } from "@chakra-ui/react";
+import { AbsoluteCenter, Box } from "@chakra-ui/react";
 import { PlaceInput } from "../atomos/PlaceInput";
 import { TransportationButtonList } from "../molecules/TranspotationButtonList";
 import { RoundOrOneWayButtonList } from "../molecules/RoundOrOneWayButtonList";
 import { WayTime } from "../atomos/WayTime";
 import { useEffect, useState } from "react";
+import { SearchButton } from "../atomos/SearchButton";
 
 type Input = {
   place: string | undefined;
@@ -11,21 +12,23 @@ type Input = {
   way: string | undefined;
   time: number | undefined;
 };
+
 const InputList = {
   place: undefined,
   transportation: undefined,
   way: undefined,
   time: undefined,
 };
+
 export const InputCheck = () => {
   const [input, setInput] = useState<Input>(InputList);
-  const [inputTime, setInputTime] = useState<string | undefined>(undefined); //時間入力のコンポーネントの変化確認
-  const [inputPlace, setInputPlace] = useState<string | undefined>(undefined); //場所入力のコンポーネントの変化確認
+  const [inputTime, setInputTime] = useState<string | undefined>(undefined);
+  const [inputPlace, setInputPlace] = useState<string | undefined>(undefined);
   const [inputTransportation, setInputTransportation] = useState<
     string | undefined
-  >(undefined); //移動手段入力のコンポーネントの変化確認
-  const [inputWay, setInputWay] = useState<string | undefined>(undefined); //往復か、片道かを入力するコンポーネント
-  const [isValidate, setIsValidate] = useState<boolean>(false); // データを送信可能かどうか
+  >(undefined);
+  const [inputWay, setInputWay] = useState<string | undefined>(undefined);
+  const [isValidate, setIsValidate] = useState<boolean>(false);
 
   useEffect(() => {
     setInput((prevInput) => {
@@ -65,30 +68,46 @@ export const InputCheck = () => {
     });
   }, [inputWay]);
 
+  const handleSearch = () => {
+    console.log("InputList:", input);
+
+    setInput(InputList); // InputListを初期化する
+  };
+
   useEffect(() => {
-    setIsValidate(() => {
-      return input.place && input.transportation && input.way && input.time
-        ? true
-        : false;
-    });
+    const isValid =
+      !!input.place && !!input.transportation && !!input.way && !!input.time;
+    setIsValidate(isValid);
   }, [input]);
 
   return (
     <>
-      <Box height="40px"></Box>
-      {/*現在地の入力 */}
-      <PlaceInput value={inputPlace} setState={setInputPlace} />
-      <Box height="101px"></Box>
-      {/*移動手段ボタン入力 */}
-      <TransportationButtonList onLabelChange={setInputTransportation} />
-      <Box height="101px"></Box>
-      {/*往復、片道ボタン入力 */}
+      <Box height="80px"></Box>
+      <Box position="relative" h="40px">
+        <AbsoluteCenter>
+          <PlaceInput value={inputPlace || ""} setState={setInputPlace} />
+        </AbsoluteCenter>
+      </Box>
+      <Box height="90px"></Box>
+      <Box position="relative" h="40px">
+        <AbsoluteCenter>
+          <TransportationButtonList
+            onLabelChange={setInputTransportation}
+            value={inputTransportation}
+          />
+        </AbsoluteCenter>
+      </Box>
+      <Box height="100px"></Box>
       <RoundOrOneWayButtonList onLabelChange={setInputWay} />
       <Box height="72px"></Box>
-      {/*かかる分数の入力 */}
-      <WayTime value={inputTime} setState={setInputTime} />
-      <Box height="74px"></Box>
-      {/*検索ボタンコンポーネント */}
+      <Box position="relative" h="40px">
+        <AbsoluteCenter>
+          <WayTime value={inputTime || ""} setState={setInputTime} />
+        </AbsoluteCenter>
+      </Box>
+      <Box height="72px"></Box>
+      <SearchButton active={isValidate} onClick={handleSearch} />
+      <Box height="200px"></Box>
     </>
   );
 };
