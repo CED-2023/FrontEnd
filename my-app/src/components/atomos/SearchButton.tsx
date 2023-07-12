@@ -2,10 +2,13 @@ import { AbsoluteCenter, Box, Button } from "@chakra-ui/react";
 
 type Props = {
   active: boolean; // 押されたかどうか
-  onClick: any;
+  onClick: () => void;
 };
 
 export const SearchButton = ({ active, onClick }: Props) => {
+  const handleButtonClick = () => {
+    onClick();
+  };
   return (
     <>
       <Box position="relative" h="40px">
@@ -14,6 +17,7 @@ export const SearchButton = ({ active, onClick }: Props) => {
             height="40px"
             variant="outline"
             colorScheme={active ? "orange" : "gray"}
+            onClick={handleButtonClick}
           >
             検索
           </Button>

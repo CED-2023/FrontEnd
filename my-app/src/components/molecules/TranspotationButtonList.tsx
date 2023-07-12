@@ -13,7 +13,7 @@ export const TransportationButtonList = ({ onLabelChange }: Props) => {
 
   const handleButtonClick = (label: string) => {
     setSelectedButton(label);
-    console.log(`Clicked: ${label}`);
+    // console.log(`Clicked: ${label}`);
     onLabelChange(label); // 親コンポーネントにlabelの値を渡す
   };
 

@@ -4,26 +4,24 @@ import { Dispatch, SetStateAction } from "react";
 
 type Props = {
   value: string | undefined;
-  setState: Dispatch<SetStateAction<string | undefined>>;
+  setInput: Dispatch<SetStateAction<string | undefined>>;
 };
 
-export const PlaceInput = ({ value, setState }: Props) => {
+export const PlaceInput = ({ value, setInput }: Props) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
+  // console.log(value);
+
   return (
-    <>
-      <Box width="222px" height="40px" bg="white">
-        <InputGroup size="sm">
-          <Input
-            placeholder="mysite"
-            value={value}
-            onChange={(e) => {
-              setState(e.target.value);
-            }}
-          />
-          <InputRightElement>
-            <Search2Icon color="black" />
-          </InputRightElement>
-        </InputGroup>
-      </Box>
-    </>
+    <Box width="222px" height="40px" bg="white">
+      <InputGroup size="sm">
+        <Input placeholder="mysite" value={value} onChange={handleChange} />
+        <InputRightElement>
+          <Search2Icon color="black" />
+        </InputRightElement>
+      </InputGroup>
+    </Box>
   );
 };
