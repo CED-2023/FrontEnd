@@ -69,6 +69,7 @@ export const InputCheck = () => {
   }, [inputWay]);
 
   const handleSearch = () => {
+    console.log("aa");
     console.log("InputList:", input);
 
     setInput(InputList); // InputListを初期化する
@@ -85,7 +86,7 @@ export const InputCheck = () => {
       <Box height="80px"></Box>
       <Box position="relative" h="40px">
         <AbsoluteCenter>
-          <PlaceInput value={inputPlace || ""} setState={setInputPlace} />
+          <PlaceInput value={inputPlace || ""} setInput={setInputPlace} />
         </AbsoluteCenter>
       </Box>
       <Box height="90px"></Box>
@@ -102,7 +103,7 @@ export const InputCheck = () => {
       <Box height="72px"></Box>
       <Box position="relative" h="40px">
         <AbsoluteCenter>
-          <WayTime value={inputTime || ""} setState={setInputTime} />
+          <WayTime value={inputTime || ""} setInput={setInputTime} />
         </AbsoluteCenter>
       </Box>
       <Box height="72px"></Box>

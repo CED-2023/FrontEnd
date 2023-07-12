@@ -50,7 +50,7 @@ export const ComponentsList = () => {
             <CardBody>
               <WayTime
                 value={undefined}
-                setState={function (
+                setInput={function (
                   value: SetStateAction<string | undefined>
                 ): void {
                   throw new Error("Function not implemented.");
@@ -73,7 +73,7 @@ export const ComponentsList = () => {
             <CardBody>
               <PlaceInput
                 value={undefined}
-                setState={function (
+                setInput={function (
                   value: SetStateAction<string | undefined>
                 ): void {
                   throw new Error("Function not implemented.");
@@ -86,8 +86,18 @@ export const ComponentsList = () => {
           <Heading size="lg">atomos/SearchButton</Heading>
           <Card variant="filled">
             <CardBody>
-              <SearchButton active={false} onClick={undefined} />
-              <SearchButton active={true} onClick={undefined} />
+              <SearchButton
+                active={false}
+                onClick={function (): void {
+                  throw new Error("Function not implemented.");
+                }}
+              />
+              <SearchButton
+                active={true}
+                onClick={function (): void {
+                  throw new Error("Function not implemented.");
+                }}
+              />
             </CardBody>
           </Card>
 
