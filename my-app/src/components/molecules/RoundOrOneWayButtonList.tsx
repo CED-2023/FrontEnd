@@ -11,7 +11,7 @@ export const RoundOrOneWayButtonList = ({ onLabelChange }: Props) => {
 
   const handleButtonClick = (label: string) => {
     setSelectedButton(label);
-    console.log(`Clicked: ${label}`); // コンソールに押されたボタンのラベルを表示
+    // console.log(`Clicked: ${label}`); // コンソールに押されたボタンのラベルを表示
     onLabelChange(label);
   };
 

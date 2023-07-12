@@ -3,10 +3,16 @@ import { Dispatch, SetStateAction } from "react";
 
 type Props = {
   value: string | undefined;
-  setState: Dispatch<SetStateAction<string | undefined>>;
+  setInput: Dispatch<SetStateAction<string | undefined>>;
 };
 
-export const WayTime = ({ value, setState }: Props) => {
+export const WayTime = ({ value, setInput }: Props) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
+  // console.log(value);
+
   return (
     <>
       <Box width="222px" height="40px" bg="white" borderColor="orange">
@@ -15,9 +21,7 @@ export const WayTime = ({ value, setState }: Props) => {
             placeholder="60"
             color="black"
             value={value}
-            onChange={(e) => {
-              setState(e.target.value);
-            }}
+            onChange={handleChange}
           />
           <InputRightAddon children="min" color="black" />
         </InputGroup>
