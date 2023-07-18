@@ -71,7 +71,7 @@ export const InputCheck = () => {
   const handleSearch = () => {
     console.log("aa");
     console.log("InputList:", input);
-    window.open("./map1/index.html");
+    window.open("https://hachi-nine.vercel.app");
 
     setInput(InputList); // InputListを初期化する
   };
