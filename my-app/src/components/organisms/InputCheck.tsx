@@ -71,6 +71,7 @@ export const InputCheck = () => {
   const handleSearch = () => {
     console.log("aa");
     console.log("InputList:", input);
+    window.open("./map1/index.html");
 
     setInput(InputList); // InputListを初期化する
   };
